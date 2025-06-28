@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwf04jya2m5ev"]
+
+[ext_resource type="Script" uid="uid://c4sb2bv7cfwrl" path="res://scripts/song_menu.gd" id="1_tcst4"]
+[ext_resource type="Texture2D" uid="uid://cd813afe5r5pj" path="res://assets/arrow-left-64.png" id="2_1go6c"]
+[ext_resource type="Texture2D" uid="uid://b2gnnl81i7240" path="res://assets/yaju&u.jpg" id="3_1go6c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tncxb"]
+bg_color = Color(0.490196, 0.623529, 0.698039, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1go6c"]
+bg_color = Color(0.490299, 0.607378, 0.778904, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojjdy"]
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3meih"]
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfucq"]
+shadow_size = 5
+
+[node name="SongMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tcst4")
+
+[node name="TitleButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 23.0
+offset_right = 94.0
+offset_bottom = 77.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tncxb")
+icon = ExtResource("2_1go6c")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SongButton1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 60.0
+offset_right = 398.0
+offset_bottom = 306.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1go6c")
+text = "
+"
+icon = ExtResource("3_1go6c")
+expand_icon = true
+
+[node name="SongButton2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 60.0
+offset_right = 696.0
+offset_bottom = 306.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojjdy")
+text = "2"
+
+[node name="SongButton3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 355.0
+offset_right = 398.0
+offset_bottom = 601.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3meih")
+text = "3"
+
+[node name="SongButton4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 355.0
+offset_right = 698.0
+offset_bottom = 601.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfucq")
+text = "4"
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="SongButton1" to="." method="_on_song_button_1_pressed"]

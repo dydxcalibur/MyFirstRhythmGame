@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://djvwyhg8dtn73"]
+
+[ext_resource type="Script" uid="uid://2oa4v7lapnkq" path="res://scripts/tap_note.gd" id="1_jbmwv"]
+[ext_resource type="Texture2D" uid="uid://gspfumb08ro2" path="res://assets/Tap Note 1.svg" id="2_r50l6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x280"]
+size = Vector2(240, 36)
+
+[node name="TapNote" type="Area2D"]
+script = ExtResource("1_jbmwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r50l6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6x280")
