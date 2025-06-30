@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq51vhbmaqvcm"]
+[gd_scene load_steps=3 format=3 uid="uid://cq51vhbmaqvcm"]
 
 [ext_resource type="Texture2D" uid="uid://b4aluhyo8d6ui" path="res://assets/track0.svg" id="1_s1rm4"]
 
-[node name="Track" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1rm4"]
+size = Vector2(240, 2160)
+
+[node name="Track" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_s1rm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s1rm4")
