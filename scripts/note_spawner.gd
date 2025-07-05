@@ -1,13 +1,12 @@
 extends Node2D
 
-@export var note_scene: PackedScene
-@export var track_positions: Array[Vector2]
+@export var tap_note_scene: PackedScene
+var track_positions = [595, 838, 1082, 1325]
 
 
 func spawn_note(lane: int):
-	var note = note_scene.instantiate()
-	note.position = track_positions[lane]
-	note.lane = lane
+	var note = tap_note_scene.instantiate()
+	note.position.x = track_positions[lane]
 	add_child(note)
 
 

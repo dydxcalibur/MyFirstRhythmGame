@@ -9,6 +9,7 @@ var beatmap_index = 0
 func _ready():
 	#beatmap_loader.load_beatmap("res://beatmap.json")
 	#audio_player.play()
+	spawner.spawn_note(1)
 	pass
 
 func _process(delta):
