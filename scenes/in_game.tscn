@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv6sho1a163sn"]
+[gd_scene load_steps=8 format=3 uid="uid://dv6sho1a163sn"]
 
 [ext_resource type="Script" uid="uid://cmhwg6o12mf6u" path="res://scripts/in_game.gd" id="1_cela1"]
 [ext_resource type="PackedScene" uid="uid://bkrmu2h7pi7kw" path="res://scenes/judge_line.tscn" id="1_ipuqq"]
+[ext_resource type="Script" uid="uid://cuvgjv0w8d04n" path="res://scripts/beatmap_loader.gd" id="2_6nh0b"]
 [ext_resource type="FontFile" uid="uid://5u7v72wtpql1" path="res://assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" id="2_ipuqq"]
-[ext_resource type="Script" uid="uid://cve1naw18te40" path="res://scripts/label.gd" id="3_h5xqe"]
+[ext_resource type="PackedScene" uid="uid://djvwyhg8dtn73" path="res://scenes/tap_note.tscn" id="3_6nh0b"]
 [ext_resource type="Script" uid="uid://bobghwj12m04" path="res://scripts/note_spawner.gd" id="5_or4b6"]
 [ext_resource type="PackedScene" uid="uid://cq51vhbmaqvcm" path="res://scenes/track.tscn" id="6_or4b6"]
 
@@ -14,10 +15,12 @@ script = ExtResource("1_cela1")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="InputHandler" type="Node" parent="."]
+[node name="BeatmapLoader" type="Node" parent="."]
+script = ExtResource("2_6nh0b")
 
 [node name="NoteSpawner" type="Node2D" parent="."]
 script = ExtResource("5_or4b6")
+tap_note_scene = ExtResource("3_6nh0b")
 
 [node name="Track" parent="NoteSpawner" instance=ExtResource("6_or4b6")]
 position = Vector2(595, 0)
@@ -52,4 +55,3 @@ theme_override_colors/font_outline_color = Color(0.408502, 0.521972, 0.817714, 1
 theme_override_fonts/font = ExtResource("2_ipuqq")
 theme_override_font_sizes/font_size = 50
 text = "1000000"
-script = ExtResource("3_h5xqe")

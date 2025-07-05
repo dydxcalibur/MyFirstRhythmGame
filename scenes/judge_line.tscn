@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://budo1m3sofrbt" path="res://assets/Judge Line.svg" id="1_difnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbwyb"]
-size = Vector2(1921, 36)
+size = Vector2(1921, 220)
 
 [node name="JudgeLine" type="Area2D"]
 
@@ -11,5 +11,4 @@ size = Vector2(1921, 36)
 texture = ExtResource("1_difnr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_hbwyb")
