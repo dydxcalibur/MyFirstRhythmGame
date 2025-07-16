@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsyui2y68ych1"]
+[gd_scene load_steps=4 format=3 uid="uid://dsyui2y68ych1"]
 
 [ext_resource type="Script" uid="uid://um3kndoybnl" path="res://scripts/main_title.gd" id="1_g6ret"]
+[ext_resource type="FontFile" uid="uid://5u7v72wtpql1" path="res://assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" id="2_ge35k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge35k"]
 bg_color = Color(0.489348, 0.622419, 0.697675, 1)
@@ -34,18 +35,21 @@ grow_vertical = 0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ge35k")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ge35k")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ge35k")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ge35k")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ge35k")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ge35k")
 text = "Quit"
