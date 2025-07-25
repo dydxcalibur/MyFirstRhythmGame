@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv6sho1a163sn"]
+[gd_scene load_steps=11 format=3 uid="uid://dv6sho1a163sn"]
 
 [ext_resource type="Script" uid="uid://cmhwg6o12mf6u" path="res://scripts/in_game.gd" id="1_cela1"]
 [ext_resource type="PackedScene" uid="uid://bkrmu2h7pi7kw" path="res://scenes/judge_line.tscn" id="1_ipuqq"]
 [ext_resource type="Script" uid="uid://cuvgjv0w8d04n" path="res://scripts/beatmap_loader.gd" id="2_6nh0b"]
 [ext_resource type="FontFile" uid="uid://5u7v72wtpql1" path="res://assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" id="2_ipuqq"]
 [ext_resource type="Script" uid="uid://cq80fo6p0t5fi" path="res://scripts/input_handler.gd" id="2_r6ttu"]
+[ext_resource type="AudioStream" uid="uid://b0faxs41uvy46" path="res://music/y2mate.com - Hiroyuki Sawano feat  LacoHands Up to the SkyInstrumental ８６エイティシックス.mp3" id="2_rtblr"]
 [ext_resource type="PackedScene" uid="uid://djvwyhg8dtn73" path="res://scenes/tap_note.tscn" id="3_6nh0b"]
 [ext_resource type="Script" uid="uid://dcnlrbnjn8r50" path="res://scripts/score_manager.gd" id="4_lohkw"]
 [ext_resource type="Script" uid="uid://bobghwj12m04" path="res://scripts/note_spawner.gd" id="5_or4b6"]
@@ -14,6 +15,7 @@
 script = ExtResource("1_cela1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rtblr")
 
 [node name="Timer" type="Timer" parent="."]
 

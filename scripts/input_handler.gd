@@ -21,6 +21,7 @@ func _input(event):
 
 
 func check_hit(lane: int):
+	#problem here
 	var zone_y = hit_zones[lane].global_position.y
 	var closest_note = null
 	var closest_distance = INF

@@ -6,12 +6,19 @@ extends Node2D
 
 var beatmap_index = 0
 
+var time_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 func _ready():
-	#beatmap_loader.load_beatmap("res://beatmaps/0.json")
-	#audio_player.play()
-	spawner.spawn_note(1)
+	beatmap_loader.load_beatmap("res://beatmaps/0.json")
+	audio_player.play()
+	#spawner.spawn_note(1)
 
 var rng = RandomNumberGenerator.new()
 func _process(delta):
-	var lane_number = rng.randi_range(0, 3)
-	spawner.spawn_note(lane_number)
+	var current_time = audio_player.get_playback_position()
+	if beatmap_index < len(time_arr):
+		if current_time >= time_arr[beatmap_index]:
+			var lane_number = rng.randi_range(0, 3)
+			spawner.spawn_note(lane_number)
+			if beatmap_index <= len(time_arr)-1:
+				beatmap_index += 1
