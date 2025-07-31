@@ -10,6 +10,8 @@ var time_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 func _ready():
 	beatmap_loader.load_beatmap("res://beatmaps/0.json")
+	print("Loaded beatmap: ", beatmap_loader.beatmap)
+
 	audio_player.play()
 	#spawner.spawn_note(1)
 
