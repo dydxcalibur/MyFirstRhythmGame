@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var tap_note_scene: PackedScene
+
 var track_positions = [595, 838, 1082, 1325]
 
 

@@ -1,5 +1,11 @@
 extends Node
 
+@export var note_speed := 800.0
+@export var spawn_y := 0.0
+@export var hit_y := 912.0
+
+var travel_time = (hit_y - spawn_y) / note_speed
+
 var beatmap: Array = []
 
 func load_beatmap(path: String):

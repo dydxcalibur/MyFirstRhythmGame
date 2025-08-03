@@ -18,6 +18,8 @@ script = ExtResource("1_cela1")
 stream = ExtResource("2_rtblr")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("2_r6ttu")
@@ -53,7 +55,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="InGameUI"]
+[node name="ScoreLabel" type="Label" parent="InGameUI"]
 layout_mode = 0
 offset_left = 1567.0
 offset_top = 26.0
@@ -65,3 +67,5 @@ theme_override_colors/font_outline_color = Color(0.408502, 0.521972, 0.817714, 1
 theme_override_fonts/font = ExtResource("2_ipuqq")
 theme_override_font_sizes/font_size = 50
 text = "1000000"
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
