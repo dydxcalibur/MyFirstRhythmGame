@@ -14,7 +14,7 @@ var spawn_times : Array[float] = []
 
 var beatmap_index := 0
 var music_started := false
-var pretime := 2.0
+var pretime := 2.0 #seconds
 
 
 func _ready():
@@ -38,11 +38,14 @@ func _process(delta):
 		print(pretime)
 		if spawn_times[beatmap_index] < 0:
 			print(spawn_times[beatmap_index])
-			var note_data = beatmap_loader.beatmap[beatmap_index]
-			var pre_spawn_time = spawn_times[beatmap_index] * -1
-			if pretime < pre_spawn_time:
-				spawner.spawn_note(note_data["lane"])
-				beatmap_index += 1
+			while beatmap_index < beatmap_loader.beatmap.size():
+				var note_data = beatmap_loader.beatmap[beatmap_index]
+				var pre_spawn_time = spawn_times[beatmap_index] * -1
+				if pretime < pre_spawn_time:
+					spawner.spawn_note(note_data["lane"])
+					beatmap_index += 1
+				else:
+					break
 	
 	if music_started:
 		var current_time = audio_player.get_playback_position()
