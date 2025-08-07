@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkrmu2h7pi7kw"]
+[gd_scene load_steps=4 format=3 uid="uid://bkrmu2h7pi7kw"]
 
 [ext_resource type="Texture2D" uid="uid://budo1m3sofrbt" path="res://assets/Judge Line.svg" id="1_difnr"]
+[ext_resource type="Script" uid="uid://yye2ipxjd5ot" path="res://scripts/judge_line.gd" id="1_hbwyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbwyb"]
 size = Vector2(1921, 220)
 
 [node name="JudgeLine" type="Area2D"]
+script = ExtResource("1_hbwyb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_difnr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HitZone" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hbwyb")

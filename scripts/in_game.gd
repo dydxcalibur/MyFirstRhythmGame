@@ -4,6 +4,7 @@ extends Node2D
 @onready var spawner = $NoteSpawner
 @onready var beatmap_loader = $BeatmapLoader
 @onready var timer: Timer = $Timer
+@onready var input_handler: Node = $InputHandler
 
 var note_speed := 800.0
 var spawn_y := 0.0
