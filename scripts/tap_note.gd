@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed: float = 800.0
+@export var speed: float = 800.0 #pixels per second
 @export var lane: int
 
 

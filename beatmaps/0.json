@@ -1,29 +1,36 @@
-[
-	{
-		"time": 0.5,"lane": 0
-	},
-	{
-		"time": 0.5,"lane": 2
-	},
-	{
-		"time": 2.8,"lane": 3
-	},
-	{
-		"time": 2.8,"lane": 1
-	},
-	{
-		"time": 3.5,"lane": 0
-	},
-	{
-		"time": 4.0,"lane": 2
-	},
-	{
-		"time": 5.0,"lane": 1
-	},
-	{
-		"time": 5.8,"lane": 3
-	},
-	{
-		"time": 6.5,"lane": 0
-	}
-]
+{
+	"title": "My Song",
+	"artist": "Artist Name",
+	"bpm": 120,
+	"offset": 0.5,
+	"lanes": 4,
+	"beatmap": [
+		{
+			"time": 0.5,"lane": 0, "type": "tap"
+		},
+		{
+			"time": 0.5,"lane": 2, "type": "tap"
+		},
+		{
+			"time": 2.0,"lane": 3, "type": "tap"
+		},
+		{
+			"time": 2.0,"lane": 1, "type": "tap"
+		},
+		{
+			"time": 3.5,"lane": 0, "type": "tap"
+		},
+		{
+			"time": 4.0,"lane": 2, "type": "tap"
+		},
+		{
+			"time": 5.0,"lane": 1, "type": "tap"
+		},
+		{
+			"time": 5.0,"lane": 3, "type": "tap"
+		},
+		{
+			"time": 6.5,"lane": 0, "type": "tap"
+		}
+	]
+}

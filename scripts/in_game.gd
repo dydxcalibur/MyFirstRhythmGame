@@ -22,10 +22,11 @@ func _ready():
 	timer.start()
 	beatmap_loader.load_beatmap("res://beatmaps/0.json")
 	print("Loaded beatmap: ", beatmap_loader.beatmap)
-	for note_data in beatmap_loader.beatmap:
-		print("Time:", note_data["time"], " Lane:", note_data["lane"])
-		spawn_times.append(note_data["time"] - travel_time)
-		print(spawn_times)
+	print(beatmap_loader.bpm)
+	for note_data in beatmap_loader.beatmap: #calculate spawntime
+		#print("Time:", note_data["time"], " Lane:", note_data["lane"])
+		spawn_times.append(note_data["time"] - travel_time) 
+		#print(spawn_times)
 	#spawner.spawn_note(1)
 
 func _process(delta):

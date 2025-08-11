@@ -4,8 +4,10 @@ extends Node
 @export var spawn_y := 0.0
 @export var hit_y := 912.0
 
-var travel_time = (hit_y - spawn_y) / note_speed
 
+var bpm: float = 120.0
+var offset: float = 0.0
+var lanes: int = 4
 var beatmap: Array = []
 
 func load_beatmap(path: String):
@@ -13,11 +15,17 @@ func load_beatmap(path: String):
 	if file:
 		var content = file.get_as_text()
 		var result = JSON.parse_string(content)
-		if typeof(result) == TYPE_DICTIONARY and result.has("error"):
+		if result is Dictionary:
+			bpm = result.get("bpm", 120.0)
+			offset = result.get("offset", 0.0)
+			lanes = result.get("lanes", 4)
+			beatmap = result.get("beatmap", [])
+			print("Loaded beatmap: ", result.get("title", "Unknown"), " by ", result.get("artist", "Unknown"))
+			print("Notes loaded: ", beatmap.size())
+		elif result.has("error"):
 			print("JSON parse error: ", result.error_string)
-		elif typeof(result) == TYPE_ARRAY: #no error
-			beatmap = result
 		else:
 			print("Unexpected JSON format.")
 	else:
 		print("Failed to open file: ", path)
+		

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cqof11bcq66oi"]
+
+[node name="HoldNote" type="Area2D"]
