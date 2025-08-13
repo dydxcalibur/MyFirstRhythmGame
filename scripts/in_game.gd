@@ -16,6 +16,7 @@ var spawn_times : Array[float] = []
 var beatmap_index := 0
 var music_started := false
 var pretime := 2.0 #seconds
+var time_elapsed := -2.0
 
 
 func _ready():
@@ -37,7 +38,7 @@ func _process(delta):
 	
 	if not music_started and (not timer.is_stopped()):
 		pretime = timer.get_time_left()
-		print(pretime)
+		#print(pretime)
 		if spawn_times[beatmap_index] < 0:
 			print(spawn_times[beatmap_index])
 			while beatmap_index < beatmap_loader.beatmap.size():
@@ -51,7 +52,7 @@ func _process(delta):
 	
 	if music_started:
 		var current_time = audio_player.get_playback_position()
-		print(current_time)
+		#print(current_time)
 		while beatmap_index < beatmap_loader.beatmap.size():
 			var note_data = beatmap_loader.beatmap[beatmap_index]
 			if current_time >= spawn_times[beatmap_index]:
@@ -59,3 +60,13 @@ func _process(delta):
 				beatmap_index += 1
 			else:
 				break
+
+
+
+func _physics_process(delta: float) -> void:
+	time_elapsed += delta
+	var minutes := int(time_elapsed) / 60
+	var seconds := int(time_elapsed) % 60
+	var milisec := int ((time_elapsed - minutes*60 - seconds)*100)
+	var formatted_time := "%02d:%02d.%02d" % [minutes, seconds,milisec]
+	print("Time elapsed: ", formatted_time)
