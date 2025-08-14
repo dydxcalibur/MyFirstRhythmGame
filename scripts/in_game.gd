@@ -8,7 +8,7 @@ extends Node2D
 
 var note_speed := 800.0
 var spawn_y := 0.0
-var judge_y := 912.0
+var judge_y := 918
 var travel_time := (judge_y - spawn_y) / note_speed
 var music_delay := 2.0  # seconds
 var spawn_times : Array[float] = []
@@ -30,17 +30,18 @@ func _ready():
 		#print(spawn_times)
 	#spawner.spawn_note(1)
 
-func _process(delta):
+func _process(_delta):
 	
 	if not music_started and timer.is_stopped():
 		audio_player.play()
 		music_started = true
+		print("music start")
 	
 	if not music_started and (not timer.is_stopped()):
 		pretime = timer.get_time_left()
 		#print(pretime)
 		if spawn_times[beatmap_index] < 0:
-			print(spawn_times[beatmap_index])
+			#print(spawn_times[beatmap_index])
 			while beatmap_index < beatmap_loader.beatmap.size():
 				var note_data = beatmap_loader.beatmap[beatmap_index]
 				var pre_spawn_time = spawn_times[beatmap_index] * -1
